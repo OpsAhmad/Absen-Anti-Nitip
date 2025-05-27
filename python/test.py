@@ -159,7 +159,7 @@ while True:
             senyum = 'X'
             color_senyum = (0,0,255)
 
-        
+    frame = cv2.resize(frame, (640, 480))
     imgBackground[140:140 + 480, 40:40 + 640] = frame
     cv2.imshow("ABSEN ANTI NITIP v1.0",imgBackground)
     # cv2.moveWindow("ABSEN ANTI NITIP v1.0", 640, 50) 
@@ -167,7 +167,7 @@ while True:
     if kedip=='Berhasil' and senyum=='Berhasil':
         if nama_pengabsen != '':
 
-            url = 'http://localhost/abwa/input.php'
+            url = 'http://localhost/absen_anti_nitip/input.php'
             data = {
                 'nama': str(output[0]),
                 'waktu': str(datetime.fromtimestamp(ts).strftime("%Y-%m-%d %H:%M:%S"))
